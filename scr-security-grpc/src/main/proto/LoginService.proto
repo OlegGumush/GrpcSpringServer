@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package scr.proto.login;
+
+option java_package = "scr.proto.login";
+option java_multiple_files = true;
+
+message LoginRequest {
+	string username = 1;
+	string password = 2;
+	string farm_id = 3;
+}
+
+message LoginResponse {
+	string token = 1;
+}
+
+service LoginService {
+
+	// Unary API
+	rpc login(LoginRequest) returns (LoginResponse) {};
+} 
